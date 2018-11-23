@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ANAGRAMMES</title>
+    <style media="screen">
+      .fild{
+        width: 200px;
+        height: 300px;}
+
+    }
+    </style>
+
+  </head>
+
+  <body>
+    <center>
+    <form>
+      <fieldset class="fild" >
+        <legend>ANAGRAMMES</legend>
+        <input type="text" id="txt1" name="" value=""><br>
+          <input type="text" id="txt2"  name="" value=""><br>
+          <button onclick="Anagramme()" name="button">Verifier</button>
+      </fieldset>
+    </form>
+    </center>
+    <script type="text/javascript">
+      function Anagramme() {
+        var chaine1 = document.getElementById('txt1').value;
+        var chaine2 = document.getElementById('txt2').value;
+        var ana1 = chaine1.replace(/[^a-z0-9]/ig, "").toLowerCase().split("").sort().join();
+        var ana2 = chaine2.replace(/[^a-z0-9]/ig, "").toLowerCase().split("").sort().join();
+
+
+        if (ana1.length == ana2.length) {
+          alert("c'est des Anagramme");
+
+
+        } else {
+          alert("c'est pas des Anagramme");
+
+        }
+      }
+    </script>
+  </body>
+</html>
